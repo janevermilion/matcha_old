@@ -1,6 +1,8 @@
-extends layout
-
+include layouts/head
+include layouts/header
 block content
   h1= message
+  img(src="images/error404.jpg")
   h2= error.status
   pre #{error.stack}
+include  layouts/footer

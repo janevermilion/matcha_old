@@ -1,8 +1,184 @@
+@font-face {
+  font-family: "Ronda";
+  src: url("fonts/RondaITCbyBT-Roman.otf") format("otf");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "RondaBold";
+  src: url("fonts/RondaITCbyBT-Bold.otf") format("otf");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "CalibreRegular";
+  src: url("fonts/Calibre-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "CalibreSemibold";
+  src: url("fonts/Calibre-Semibold.woff") format("woff");
+  src: url("fonts/Calibre-Semibold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: normal;
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #eeeeee;
+
+}
+main {
+  margin: 0;
+  padding: 0;
+  min-height: 95vh;
+}
+*
+{
+  margin: 0 auto;
+  padding: 5px 10px 0 10px;
+caret-color: #299406;
+
+}
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+h1
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: "CalibreRegular", sans-serif;
+  font-size: 28px;
+  line-height: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #0a0a0a;
+  margin: 35px auto 0 auto;
 }
 
+h2
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: "CalibreRegular", sans-serif;
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #0a0a0a;
+  margin: 35px auto 0 auto;
+}
 a {
-  color: #00B7FF;
+  line-height: 22px;
+  font-size: 20px;
+  margin: 0 10px;
+}
+label {
+  font-family: "CalibreRegular", sans-serif;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #32c601;
+  display: block;
+  margin-bottom: 5px;
+}
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #0a0a0a;
+  font-family: "CalibreRegular", sans-serif;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 400;
+  text-decoration: none;
+  display: block;
+  color: #0a0a0a;
+  margin-bottom: 40px;
+  padding-bottom: 4px;
+  width: 100%;
+}
+button {
+  font-family: "CalibreRegular", sans-serif;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
+  background-color: #299406;
+  display: block;
+  border: none;
+  border-radius: 28px;
+  padding: 14px 30px;
+  margin-bottom: 48px;
+  cursor: pointer;
+  width: 100%;
+
+}
+button:hover
+{
+  box-shadow: -1px -1px 13px 0 rgba(2,153,65,1);
+}
+p{
+  font-family: "CalibreRegular", sans-serif;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #0a0a0a;
+  position: relative;
+}
+a{
+  font-family: "CalibreRegular", sans-serif;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 400;
+  color: #0a0a0a;
+  position: relative;
+}
+form
+{
+  max-width: 20%;
+}
+header
+{
+  min-height: 50px;
+  background-color: #319c33;
+}
+header nav ul
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+footer
+{
+  min-height: 50px;
+  background-color: #319c33;
+  position: relative;
+  top: 90vh
+}
+img
+{
+  margin: 0 auto;
+  border-radius: 10px;
+}
+ul
+{
+  list-style-type: none;
+
+}
+li a
+{
+  color: whitesmoke;
+  text-decoration: none;
 }

@@ -1,19 +1,16 @@
-
 include layouts/head
 include layouts/header
 
 body
     img(src="images/logo.png" width='100px' height='100px')
     h1 Welcome to Matcha!
-    h2 We create meaningful connections that spark hearts and inspire people to share themselves authentically and enthusiastically.
+
     div
-        p To start matcha, please login or register:
-        form(method='post' action='/sign_in')
+        p To start matcha, please fill the form:
+        form(method='post' action='register/registeruser')
             label(for='username') Your Username:
             input(type='text' name='username' id='username')
             label(for='password') Your password
             input(type='password' name='password' id='password')
-            button(type='submit') Enter to Matcha
-            a(href='/forgot_pass') Forgot pass?
-            a(href='/register') Register
+            button(type='submit') Register in Matcha
 include layouts/footer
