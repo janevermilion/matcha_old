@@ -10,7 +10,9 @@ body
         form(method='post' action='register/registeruser')
             label(for='username') Your Username:
             input(type='text' name='username' id='username')
-            label(for='password') Your password
-            input(type='password' name='password' id='password')
+            label(for='email') Your e-mail:
+            input(type='email' name='email' id='email' minlength='5')
+            label(for='password') Your password:
+            input(type='password' name='password' id='password' minlength='5')
             button(type='submit') Register in Matcha
 include layouts/footer

@@ -20,6 +20,7 @@ var favicon = require('serve-favicon');
  */
 var indexRouter = require('./routes/index');
 var registerRouter = require('./routes/register');
+var settingsRouter = require('./routes/settings');
 
 var app = express();
 
@@ -60,7 +61,7 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use('/', indexRouter);
 //app.use('/users', usersRouter);
 app.use('/register', registerRouter);
-
+app.use('/settings', settingsRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
@@ -79,13 +80,13 @@ app.use(function(err, req, res, next) {
 Объект app приложения Express теперь полностью настроен. Остался последний шаг - добавить его к экпортируемым элементам модуля (это позволит импортировать его в файле /bin/www).
  */
 //создает базу данных и таблицы, если все правильно создалось вернет тру и в консоли упадет запись "база данных создана успешно" если нет то "база не создана"
-var createBases = require("./public/javascripts/create_database_and_tables");
-let isBaseAndTablesCreated = createBases();
-/*
+var createBases = require("./own_libraries/connections");
+let isBaseAndTablesCreated = createBases.createDatabasesAndTables();
+
 if (isBaseAndTablesCreated === true)
   console.log("База данных создана успешно или уже существует!");
 else
-  console.log("база не создана памагити!");*/
+  console.log("база не создана памагити!");
 module.exports = app;
 /*
 запуск на винде:

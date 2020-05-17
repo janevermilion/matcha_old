@@ -8,22 +8,24 @@ var app = express();
 Первым делом в модуле signin.js создадим маршруты для sign in .
  Код сначала импортирует объект приложения Express, использует его для получения объекта Router и затем, применяя метод get(), добавляет к объекту пару маршрутов. В завершение модуль экспортирует объект Router .
  */
+/*
 router.use('/', function (req, res, next) {
 next();
-})
+})*/
 router.get('/', function(req, res, next) {
    res.render('register', { title: 'Matcha-register' });
 });
 
 router.post('/registeruser', [
-    check('username').isLength({min:5}).withMessage('username must have more than 5 characters'),
-    check('password').isLength({min:6}).withMessage('password must have more than 6 characters'),
+    check('username').isLength({min:3}).withMessage('username must have more than 2 characters'),
+    check('password').isLength({min:6}).withMessage('password must have more than 5 characters'),
    body('username').not().isEmpty()
        .trim()
        .escape(),
    body('password').not().isEmpty()
        .trim()
-       .escape()
+       .escape(),
+    body('email').not().isEmpty().isEmail().normalizeEmail()
 ], function (req, res) {
    const errors = validationResult(req);
    if(!errors.isEmpty()){
@@ -36,13 +38,12 @@ router.post('/registeruser', [
    }
    else
    {
-      let regNewUser = require('../public/javascripts/register_new_user');
-      let resultOfRegistration = regNewUser(req.body);
+      let regNewUser = require('../own_libraries/settings');
+      let resultOfRegistration = regNewUser.registerNewUser(req.body);
       if(resultOfRegistration === true)
-         console.log("New user was added to base");
+         res.send("New user was added to base");
       else
-         console.log("error with adding user");
-      res.send(resultOfRegistration);
+         res.send("error with adding user");
    }
 });
 module.exports = router;
