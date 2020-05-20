@@ -39,11 +39,8 @@ router.post('/registeruser', [
    else
    {
       let regNewUser = require('../own_libraries/settings');
-      let resultOfRegistration = regNewUser.registerNewUser(req.body);
-      if(resultOfRegistration === true)
-         res.send("New user was added to base");
-      else
-         res.send("error with adding user");
+      regNewUser.registerNewUser(req.body);
+      res.redirect("/");
    }
 });
 module.exports = router;
